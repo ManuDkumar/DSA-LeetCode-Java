@@ -1,6 +1,6 @@
 import java.util.Queue;
 import java.util.ArrayDeque;
-public class import java.util.Queue;
+import java.util.Queue;
 import java.util.ArrayDeque;
 public class NumberOfIslands {
 
