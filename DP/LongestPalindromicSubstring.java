@@ -1,0 +1,36 @@
+class LongestPalindromicSubstring {
+    public String longestPalindrome(String s) {
+        int n = s.length();
+        int left = 0;
+        int right = 0;
+        int resLen = 0;
+
+        for(int i = 0; i < n; i++) {
+
+            int l = i;
+            int r = i;
+            while ((l >= 0 && r < n ) && s.charAt(l) == s.charAt(r) ) {
+                if (( r - l + 1) > resLen) {
+                    resLen = r - l + 1;
+                    left = l;
+                    right = r + 1;
+                }
+                l--;
+                r++;
+            }
+
+            l = i;
+            r = i + 1;
+            while ((l >= 0 && r < n ) && s.charAt(l) == s.charAt(r) ) {
+                if (( r - l + 1) > resLen) {
+                    resLen = r - l + 1;
+                    left = l;
+                    right = r + 1;
+                }
+                l--;
+                r++;
+            }
+        }
+        return s.substring(left, right);
+    }
+}
